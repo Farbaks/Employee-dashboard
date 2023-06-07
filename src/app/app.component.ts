@@ -21,17 +21,19 @@ export class AppComponent {
                 this.employees = res.employees;
                 this.selectEmployee(this.employees[0])
             },
-            error: (e: any) => {
-
-            }
+            error: (e: any) => {}
         })
     }
 
-    selectEmployee(employee: Employee) {
+    selectEmployee(employee: Employee): void {
         this.selectedEmployee = employee;
     }
 
-    isAColleague(employee:Employee): boolean {
+    calculatePopularity(employee: Employee): string {
+        return ((employee.popularity * 2.5) + 10) + 'px';
+    }
+
+    isAColleague(employee: Employee): boolean {
         return this.selectedEmployee.colleagues.includes(employee.name);
     }
 }

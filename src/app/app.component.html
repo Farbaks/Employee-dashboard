@@ -7,19 +7,20 @@
             <div class="logo">
                 <img src="assets/images/_logo/the-godfather.svg" />
             </div>
-            <!-- Employee list -->
+            <!-- Employees list -->
             <div class="list">
                 <ng-container *ngFor="let employee of employees">
                     <h2 
                     [class.colleague]="isAColleague(employee)"
                     [class.active-item]="selectedEmployee == employee" 
-                    [style.font-size]="((employee.popularity*2.5)+10)+'px'"
+                    [style.font-size]="calculatePopularity(employee)"
                     (click)="selectEmployee(employee)">
                         {{employee.name}}
                     </h2>
                 </ng-container>
             </div>
         </div>
+        <!-- Selected Employee Details -->
         <div class="right">
             <div class="profile">
                 <img [src]="'assets/images/_images/profile_pics/'+selectedEmployee.image" />
