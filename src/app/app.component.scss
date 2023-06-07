@@ -1,0 +1,185 @@
+.main-page {
+    width: 100%;
+    min-height: 100%;
+    --headerHeight: 40vh;
+    @media screen and (min-height: 1441px) {
+        --headerHeight: 25vh;
+    }
+    .background-img {
+        width: 100%;
+        height: var(--headerHeight);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .overlay {
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: flex-start;
+        .left {
+            width: 20%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                width: 25%;
+            }
+            .logo {
+                width: 60%;
+                height: var(--headerHeight);
+                display: flex;
+                align-items: center;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .list {
+                width: 100%;
+                margin-top: 20px;
+                h2 {
+                    width: 100%;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: white;
+                    margin-bottom: 16px;
+                    padding: 12px 20px;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                }
+                .active-item {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+                .colleague {
+                    color: steelblue;
+                }
+            }
+        }
+        .right {
+            width: 80%;
+            max-width: 1336px;
+            margin-left: 20%;
+            padding: calc(var(--headerHeight) - 60px) 100px 100px;
+            display: flex;
+            align-items: flex-start;
+            @media screen and (max-width: 768px) {
+                padding: calc(var(--headerHeight) - 60px) 50px 50px;
+            }
+            .profile {
+                width: 120px;
+                height: 120px;
+                overflow: hidden;
+                flex-shrink: 0;
+                border-radius: 3px;
+                border: solid 1px rgb(200, 200, 200);
+                box-shadow: 10px 10px 70px 0px rgba(156, 156, 156, 1);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .details {
+                margin-left: 30px;
+                h1 {
+                    font-size: 40px;
+                    font-weight: 300;
+                    color: white;
+                    margin-bottom: 20px;
+                    @media screen and (max-width: 768px) {
+                        font-size: 30px;
+                    }
+                }
+                .popularity {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        font-size: 24px;
+                        margin-right: 15px;
+                        color: white;
+                        @media screen and (max-width: 768px) {
+                            font-size: 20px;
+                        }
+                    }
+                    input {
+                        height: 39px;
+                        -webkit-appearance: none;
+                        margin: 10px 0;
+                        width: 100%;
+                        background: transparent;
+                        &:focus {
+                            outline: none;
+                            &::-webkit-slider-runnable-track {
+                                background: rgba(0, 0, 0, 0.5);
+                            }
+                        }
+                        &::-webkit-slider-runnable-track {
+                            width: 100%;
+                            height: 5px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            box-shadow: 0px 0px 0px #000000;
+                            background: rgba(0, 0, 0, 0.5);
+                            border-radius: 7px;
+                            border: 0px solid #000000;
+                        }
+                        &::-webkit-slider-thumb {
+                            box-shadow: 2px 2px 4px #363636;
+                            border: 1px solid #000000;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 30px;
+                            background: #ffffff;
+                            cursor: pointer;
+                            -webkit-appearance: none;
+                            margin-top: -13px;
+                        }
+                        
+                    }
+                }
+                .biography {
+                    width: 100%;
+                    padding: 20px;
+                    background: rgba(0, 0, 0, 0.5);
+                    margin-top: 40px;
+                    border-radius: 3px;
+                    h3 {
+                        font-size: 32px;
+                        font-weight: 500;
+                        color: white;
+                        margin-bottom: 10px;
+                        @media screen and (max-width: 768px) {
+                            font-size: 25px;
+                        }
+                    }
+                    p {
+                        width: 100%;
+                        font-size: 16px;
+                        color: white;
+                        @media screen and (max-width: 768px) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
